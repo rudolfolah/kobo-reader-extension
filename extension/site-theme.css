@@ -1,0 +1,72 @@
+/* Main website only. CSS media queries handle macOS Auto/Light/Dark changes. */
+@media (prefers-color-scheme: dark) {
+  :root, .kobo-theme {
+    color-scheme: dark;
+    --k-color-white: #17191d !important;
+    --k-color-bg-light: #22252b !important;
+    --k-color-bg-dark: #17191d !important;
+    --k-color-black: #e4e6eb !important;
+    --k-color-black-65: #b3b9c4 !important;
+    --k-color-black-42: rgba(228,230,235,.42) !important;
+    --k-color-black-16: rgba(228,230,235,.16) !important;
+    --k-color-black-12: rgba(228,230,235,.12) !important;
+    --k-color-black-08: rgba(228,230,235,.08) !important;
+    --k-color-black-04: rgba(228,230,235,.04) !important;
+    --k-color-black-04-opaque: #22252b !important;
+    --k-border-color-secondary: #454b56 !important;
+    --k-list-menu-bg: #22252b !important;
+    --toastify-color-light: #22252b !important;
+    --toastify-text-color-light: #e4e6eb !important;
+  }
+  html, body, main, #main, [role="main"] {
+    background-color: #17191d !important;
+    color: #e4e6eb !important;
+  }
+  header, footer, nav, [role="dialog"], [role="menu"], [role="listbox"],
+  .bg-white, .bg-light {
+    background-color: #22252b !important;
+    color: #e4e6eb !important;
+    border-color: #454b56 !important;
+  }
+  /* Black promotional banners stay dark after remapping black text tokens. */
+  .bg-black, .bg-dark { background-color: #17191d !important; }
+  .text-white, .text-white :is(span, a, strong, svg) { color: #ffffff !important; }
+  input, textarea, select {
+    background-color: #22252b !important;
+    color: #e4e6eb !important;
+    border-color: #596170 !important;
+  }
+  input::placeholder, textarea::placeholder { color: #b3b9c4 !important; }
+  :focus-visible { outline-color: #aecbff !important; }
+  ::selection { background-color: #456da5; color: #fff; }
+
+  /* My Books uses older, hardcoded colours rather than the homepage tokens.
+     Inherit text colour through its wrappers; flatten legacy white surfaces.
+     Neither backgrounds stored as images nor cover artwork are filtered. */
+  body :is(div, span, p, h1, h2, h3, h4, h5, h6, label, legend,
+    small, strong, em, li, dt, dd, td, th) {
+    color: inherit !important;
+  }
+  body :is(div, section, article, aside, ul, ol, li, table, thead, tbody, tr, td, th) {
+    background-color: transparent !important;
+  }
+  body a {
+    color: #aecbff !important;
+    background-color: transparent !important;
+  }
+  body :is(button, [role="button"], input, textarea, select, option, .btn,
+    .button, .primary-button, .secondary-button) {
+    background-color: #22252b !important;
+    color: #e4e6eb !important;
+    border-color: #596170 !important;
+  }
+  body :is([role="dialog"], [role="menu"], [role="listbox"],
+    .dropdown-menu, .modal-content, .popover, .bg-white, .bg-light) {
+    background-color: #22252b !important;
+    color: #e4e6eb !important;
+  }
+  body :is(header, footer, nav, [role="banner"], [role="navigation"]) {
+    background-color: #22252b !important;
+    color: #e4e6eb !important;
+  }
+}

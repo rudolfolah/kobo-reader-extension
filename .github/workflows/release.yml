@@ -1,0 +1,36 @@
+name: Release
+
+# Push a tag like v1.2.1 to publish a release containing only the extension.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm test
+      - name: Check tag matches manifest version
+        run: |
+          version=$(node -p "require('./extension/manifest.json').version")
+          if [ "v$version" != "${GITHUB_REF_NAME}" ]; then
+            echo "Tag ${GITHUB_REF_NAME} does not match manifest version v$version" >&2
+            exit 1
+          fi
+      - name: Package extension
+        run: |
+          mkdir dist
+          cp -r extension kobo-reader-extension
+          rm -f kobo-reader-extension/.DS_Store
+          zip -r "dist/kobo-reader-extension-${GITHUB_REF_NAME}.zip" kobo-reader-extension
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
+          generate_release_notes: true

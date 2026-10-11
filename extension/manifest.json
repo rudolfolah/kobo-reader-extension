@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Kobo Reader Extension",
+  "version": "1.2.1",
+  "description": "Kobo reader session recovery and system-matched dark mode for the website and Web Reader.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://readnow.kobo.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://readnow.kobo.com/*"
+      ],
+      "js": [
+        "reader-appearance.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://www.kobo.com/*",
+        "https://kobo.com/*"
+      ],
+      "css": [
+        "site-theme.css"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}

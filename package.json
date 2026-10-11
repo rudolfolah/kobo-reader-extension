@@ -1,0 +1,9 @@
+{
+  "name": "kobo-reader-extension",
+  "private": true,
+  "description": "Kobo Reader browser extension (see extension/)",
+  "scripts": {
+    "test": "node tests/test.cjs && node tests/theme-test.cjs"
+  },
+  "engines": { "node": ">=18" }
+}
