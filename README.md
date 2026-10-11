@@ -3,7 +3,7 @@
 Chrome web extension for the Rakuten Kobo Reader website (Chrome, Brave, Edge).
 
 - Syncs light and dark mode theme with the operating system for the reader and the Kobo website, including the "My Books" library page
-- Reloads the reader when there are errors such as "User has no active session"
+- Reloads the reader when there is the "User has no active session" error
 
 ![Kobo Web Reader, Light Theme](./docs/reader-light.png)
 ![Kobo Web Reader, Dark Theme](./docs/reader-dark.png)
