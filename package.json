@@ -5,5 +5,5 @@
   "scripts": {
     "test": "node tests/test.cjs && node tests/theme-test.cjs"
   },
-  "engines": { "node": ">=18" }
+  "engines": { "node": ">=26" }
 }
