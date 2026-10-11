@@ -42,10 +42,6 @@ npm test
 
 This runs `tests/test.cjs` (session recovery) and `tests/theme-test.cjs` (appearance) against an instrumented DOM double. These are logic tests only: the real behaviour needs a signed-in Kobo session, so there is no automated live-browser test.
 
-See [tests/VALIDATION.md](tests/VALIDATION.md) for what is covered and the manual checks still needed.
-
-CI runs the tests on every push and pull request (`.github/workflows/test.yml`).
-
 ### Releasing
 
 1. Bump `version` in `extension/manifest.json`.
