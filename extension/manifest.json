@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Kobo Reader Extension",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Kobo reader session recovery and system-matched dark mode for the website and Web Reader.",
   "content_scripts": [
     {
